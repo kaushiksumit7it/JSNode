@@ -1,0 +1,48 @@
+Alka Priya21:37
+let getData = (name) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => { // Database 
+            name = 'alka';
+            resolve(name);
+            if (!name) {
+                reject(null);
+            }
+        }, 200);
+
+    })
+}
+
+async function example() {
+    const name = await getData();
+    console.log(name);
+
+}
+Alka Priya21:42
+let getData = (name) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => { // Database 
+            // name = 'alka';
+            if (name) {
+                resolve(name);
+            }
+            if (!name) {
+                reject(null);
+            }
+        }, 200);
+
+    });
+}
+
+async function example() {
+    let name;
+    try {
+        name = await getData();
+
+    } catch (err) {
+        name = err;
+    }
+    console.log(name);
+
+}
+
+example();
